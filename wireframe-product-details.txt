@@ -1,0 +1,1 @@
+Wireframe: Product Details\n\n- Imagen grande\n- Título y precio\n- Descripción\n- Botón agregar al carrito\n

@@ -1,0 +1,1 @@
+Wireframe: Products\n\n- Grid de productos\n- Filtros y ordenación\n- Paginación\n

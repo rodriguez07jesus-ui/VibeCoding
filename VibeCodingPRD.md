@@ -1,0 +1,1 @@
+# VibeCoding Prototype App - PRD\n\nResumen del producto y requisitos de alto nivel.\n\n## Objetivo\nCrear una aplicación de compras minimalista para probar flujos de producto y checkout.\n\n## Requisitos clave\n- Listado de productos\n- Detalle de producto\n- Carrito de compra\n- Checkout\n\n## Notas\nAgregar wireframes y pruebas de usabilidad."
