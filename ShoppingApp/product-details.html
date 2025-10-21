@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Detalle de producto - VibeCoding</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="index.html" class="logo-link"><img src="assets/logo.svg" alt="VibeCoding logo" class="logo"></a>
+      <nav>
+        <a href="checkout.html" class="cart-link">Carrito (<span id="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="product-detail">
+      <div class="detail-grid">
+        <img id="detail-image" src="assets/placeholder.svg" alt="Imagen del producto">
+        <div id="detail-info">
+          <h2 id="detail-title">Producto</h2>
+          <p id="detail-price">$0.00</p>
+          <p id="detail-desc">Descripción del producto.</p>
+          <button id="add-detail" class="add-btn">Agregar al carrito</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    // Mostrar el producto por id desde query string
+    (function(){
+      const params = new URLSearchParams(location.search);
+      const id = parseInt(params.get('id')) || 0;
+      const product = window.PRODUCTS && window.PRODUCTS.find(p=>p.id===id);
+      if(product){
+        document.getElementById('detail-title').textContent = product.title;
+        document.getElementById('detail-price').textContent = `$${product.price.toFixed(2)}`;
+        document.getElementById('add-detail').addEventListener('click', ()=>{ addToCart(product); alert('Añadido al carrito'); });
+      } else {
+        document.getElementById('detail-title').textContent = 'Producto no encontrado';
+      }
+      // actualizar contador
+      const cnt = document.getElementById('cart-count');
+      cnt.textContent = (window._vibe_cart && window._vibe_cart.length) || 0;
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VibeCoding Shop - Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="#" class="logo-link"><img src="assets/logo.svg" alt="VibeCoding logo" class="logo"></a>
+      <nav>
+        <button id="cart-btn" aria-label="Ver carrito"><img src="assets/icon-cart.svg" alt="carrito" width="18" height="18"> <span id="cart-count">0</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+  <section id="products" class="products-grid" aria-label="Productos"></section>
+  </main>
+
+  <template id="product-template">
+    <article class="product">
+      <img class="product-image" src="assets/placeholder.svg" alt="Imagen de producto">
+      <h3 class="product-title"></h3>
+      <div class="product-price"></div>
+      <button class="add-btn">Agregar</button>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

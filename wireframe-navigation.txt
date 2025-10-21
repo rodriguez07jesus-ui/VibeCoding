@@ -1,0 +1,1 @@
+Wireframe: Navigation\n\n- Barra superior con logo\n- Enlaces: Productos, Carrito, Perfil\n- Buscador\n

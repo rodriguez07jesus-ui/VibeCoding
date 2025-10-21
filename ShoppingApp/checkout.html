@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout - VibeCoding</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="index.html" class="logo-link"><img src="assets/logo.svg" alt="VibeCoding logo" class="logo"></a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Checkout</h2>
+    <section id="checkout-list"></section>
+    <section id="checkout-form">
+      <h3>Dirección de envío</h3>
+      <form id="form-checkout">
+        <label>Nombre
+          <input name="name" required>
+        </label>
+        <label>Dirección
+          <input name="address" required>
+        </label>
+        <button type="submit" class="add-btn">Realizar pedido</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    (function(){
+      const list = document.getElementById('checkout-list');
+      const cart = window._vibe_cart || [];
+      if(cart.length===0){ list.innerHTML = '<p>Tu carrito está vacío.</p>'; }
+      else{
+        const ul = document.createElement('ul');
+        let total = 0;
+        cart.forEach(item=>{ const li = document.createElement('li'); li.textContent = `${item.title} - $${item.price.toFixed(2)}`; ul.appendChild(li); total += item.price; });
+        list.appendChild(ul);
+        const totEl = document.createElement('p'); totEl.textContent = `Total: $${total.toFixed(2)}`; list.appendChild(totEl);
+      }
+
+      document.getElementById('form-checkout').addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('Pedido simulado. Gracias!');
+        // limpiar carrito
+        window._vibe_cart = [];
+        try{ localStorage.removeItem('vibe_cart'); }catch(e){}
+        location.href = 'index.html';
+      });
+    })();
+  </script>
+</body>
+</html>
