@@ -1,9 +1,9 @@
 // Prototipo simple: lista de productos y carrito en memoria
 const PRODUCTS = [
-  { id:1, title:'Camiseta Vibe', price:19.99, img:'assets/product1.svg', desc:'Camiseta cómoda de algodón con logo Vibe.' },
-  { id:2, title:'Gorra Vibe', price:14.5, img:'assets/product2.svg', desc:'Gorra ajustable con bordado.' },
-  { id:3, title:'Taza Vibe', price:9.75, img:'assets/placeholder.svg', desc:'Taza cerámica para tu bebida favorita.' },
-  { id:4, title:'Sudadera Vibe', price:39.0, img:'assets/placeholder.svg', desc:'Sudadera con capucha, suave y abrigadora.' }
+  { id:1, title:'Camiseta Vibe', price:19.99, img:'assets/camiseta-vibe.svg', desc:'Camiseta cómoda de algodón con logo Vibe.' },
+  { id:2, title:'Gorra Vibe', price:14.50, img:'assets/gorra-vibe.svg', desc:'Gorra ajustable con bordado.' },
+  { id:3, title:'Taza Vibe', price:9.75, img:'assets/taza-vibe.svg', desc:'Taza cerámica para tu bebida favorita.' },
+  { id:4, title:'Sudadera Vibe', price:39.00, img:'assets/sudadera-vibe.svg', desc:'Sudadera con capucha, suave y abrigadora.' }
 ];
 
 const productsEl = document.getElementById('products');
@@ -34,7 +34,10 @@ function renderProducts(){
 }
 
 function addToCart(product){
-  cart.push(product);
+  // evitar mutar el objeto original
+  const copy = Object.assign({}, product);
+  copy.qty = (copy.qty || 1);
+  cart.push(copy);
   updateCartUI();
 }
 

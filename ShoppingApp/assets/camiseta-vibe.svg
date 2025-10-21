@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="100%" height="100%" fill="#fff7f0"/>
+  <path d="M80 60c20-20 40-20 60-20s40 0 60 20c20 20 60 20 80 20v120c-40 20-120 20-140 20S120 200 80 180V80z" fill="#ffb199" stroke="#ff8a65" stroke-width="4"/>
+  <text x="200" y="270" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6b3a2a" text-anchor="middle">Camiseta Vibe</text>
+</svg>
